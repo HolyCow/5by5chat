@@ -4,8 +4,8 @@ require 'cinch'
 bot = Cinch::Bot.new do
    configure do |c|
       c.server = "irc.freenode.org"
-      c.channels = ["#testing-5by5-logbot"]
-      c.nick = "LogBot5by5"
+      c.channels = ["#5by5"]
+      c.nick = "showcot"
    end
    
    on :message, "hello" do |m|
@@ -17,7 +17,7 @@ bot = Cinch::Bot.new do
       
       puts( formatted_string )
       
-      file = File.new('./chat.log', 'a+')
+      file = File.new(File.expand_path('~/data/chat.log'), 'a+')
       
       file.puts formatted_string
       
