@@ -13,7 +13,7 @@ bot = Cinch::Bot.new do
    end
    
    on :channel do |m|
-      formatted_string = m.time.to_s + ' - ' + m.user.nick + ': ' + m.message
+      formatted_string = '**' + m.time.to_s + '** - **' + m.user.nick + ':** ' + m.message + '  '
       
       puts( formatted_string )
       
