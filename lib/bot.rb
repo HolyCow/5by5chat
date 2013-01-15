@@ -15,9 +15,9 @@ bot = Cinch::Bot.new do
    on :channel do |m|
    
       if m.action?
-         formatted_string = '**' + m.time.to_s + '** *' + m.user.nick + ' ' + m.action_message + '*  '
+         formatted_string = '**' + m.time.to_s + '** - *' + m.user.nick + ' ' + m.action_message + '*  '
       else
-         formatted_string = '**' + m.time.to_s + '** - **' + m.user.nick + ':** ' + m.message + '  '
+         formatted_string = '**' + m.time.to_s + '** - **&lt;' + m.user.nick + '&gt;** ' + m.message + '  '
       end
       
       puts( formatted_string )
