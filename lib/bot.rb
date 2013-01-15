@@ -1,5 +1,5 @@
+require 'date'
 require 'cinch'
-
 
 bot = Cinch::Bot.new do
    configure do |c|
@@ -17,7 +17,9 @@ bot = Cinch::Bot.new do
       
       puts( formatted_string )
       
-      file = File.new(File.expand_path('~/data/chat.log'), 'a+')
+      today = Date.today
+      
+      file = File.new(File.expand_path('~/data/' + Time.now.strftime("%Y-%m-%d") + '-Chat-for-' + Time.now.strftime("%Y-%m-%d") + '.md'), 'a+')
       
       file.puts formatted_string
       
