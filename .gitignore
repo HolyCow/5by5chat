@@ -1,4 +1,3 @@
 .dotcloud
 _site
 .vagrant
-Gemfile.lock
